@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .container{
+        .container {
 
             margin: auto;
             width: 300px;
@@ -14,46 +15,43 @@
         }
     </style>
 </head>
+
 <body>
-    
+
     <h1 style="text-align: center;">Rotating Image</h1>
     <br>
     <br>
     <div class="container">
-    <img src="1.jpg" style="width: 300px; height: 300px;" id="i1"/>
-    <br>
-    <br>
-    <br>
-    <br>
-    <button type="button" onclick="clickit()" style="font-size: 23px;">Start</button>
-    <button type="button" onclick="stop()" style="font-size: 23px;">Stop</button>
+        <img src="1.jpg" style="width: 300px; height: 300px;" id="i1" class="rotate" />
+        <br>
+        <br>
+        <br>
+        <br>
+        <p style="font-size: 100px; margin-left: 120px; margin-top: 3px;">	&uarr;</p>
+        <button type="button" onclick="clickit()" style="font-size: 23px; margin-left: 100px;">Start</button>
     </div>
-    
+
     <script>
 
-    var val=0;
-    var id =0;
+        var val = 0;
+        var id = 0;
 
-    function clickit(){
+        function clickit() {
 
-    id = setInterval(start,1);
+            id = setInterval(start, 1);
 
-    }
+        }
 
-    function start(){
+        function start() {
 
-     val+=1;
-     document.getElementById('i1').style.webkitTransform="rotate("+val+"deg)";
-    
+            val += 1;
+            document.getElementById('i1').style.webkitTransform = "rotate(" + val + "deg)";
 
-    }
-     
-    function stop(){
+            setTimeout(function () { clearInterval(id); }, 5000);
 
-        setTimeout(function( ) { clearInterval( id ); }, 500);
-        // clearInterval(id);
-    }
+        }
     </script>
-    
+
 </body>
+
 </html>
